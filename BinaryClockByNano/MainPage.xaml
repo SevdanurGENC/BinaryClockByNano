@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BinaryClockByNano.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="728" d:DesignHeight="480"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Landscape"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Nano'nun Gunlugu - Sevdanur GENC" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Binary Clock" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Background="Black">
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="379,403,0,0" Name="Seconds2ndHalf1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" Fill="#FFC43A3A" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="380,327,0,0" Name="Seconds2ndHalf2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="379,251,0,0" Name="Seconds2ndHalf4" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="380,176,0,0" Name="Seconds2ndHalf8" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="304,403,0,0" Name="Seconds1stHalf1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="304,327,0,0" Name="Seconds1stHalf2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="304,251,0,0" Name="Seconds1stHalf4" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="229,403,0,0" Name="Minutes2ndHalf1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="154,0,0,134" Name="Minutes1stHalf1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Bottom" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Right" Margin="0,403,307,0" Name="Hours2ndHalf1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="4,403,0,0" Name="Hours1stHalf1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" Fill="#FFBA2929" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="229,327,0,0" Name="Minutes2ndHalf2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="229,251,0,0" Name="Minutes2ndHalf4" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="229,176,0,0" Name="Minutes2ndHalf8" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="154,327,0,0" Name="Minutes1stHalf2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="154,251,0,0" Name="Minutes1stHalf4" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="79,327,0,0" Name="Hours2ndHalf2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="79,251,0,0" Name="Hours2ndHalf4" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="79,176,0,0" Name="Hours2ndHalf8" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <Rectangle Height="70" HorizontalAlignment="Left" Margin="4,327,0,0" Name="Hours1stHalf2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="70" />
+            <TextBlock Height="33" Margin="183,568,162,0" Name="MainTimeLabel" Text="TextBlock" VerticalAlignment="Top" Foreground="White" />
+            <TextBlock Height="51" HorizontalAlignment="Right" Margin="0,49,34,0" Name="SecondsLabel" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFFCFCFC" FontSize="36" Width="63" />
+            <TextBlock Height="51" HorizontalAlignment="Left" Margin="201,49,0,0" Name="MinutesLabel" Text="TextBlock" VerticalAlignment="Top" Foreground="White" FontSize="36" Width="64" />
+            <TextBlock Height="51" HorizontalAlignment="Left" Margin="49,49,0,0" Name="HoursLabel" Text="TextBlock" VerticalAlignment="Top" Width="67" Foreground="White" FontSize="36" />
+            <TextBlock Height="47" HorizontalAlignment="Left" Margin="143,50,0,0" Name="textBlock1" Text=":" VerticalAlignment="Top" Width="11" Foreground="White" FontSize="36" />
+            <TextBlock FontSize="36" Foreground="White" Height="47" HorizontalAlignment="Left" Margin="311,48,0,0" Name="textBlock2" Text=":" VerticalAlignment="Top" Width="11" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
